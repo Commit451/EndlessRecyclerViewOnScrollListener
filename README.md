@@ -3,7 +3,7 @@ Listener that alerts when the end of a RecyclerView is reached
 
 [![Build Status](https://travis-ci.org/Commit451/EndlessRecyclerViewOnScrollListener.svg?branch=master)](https://travis-ci.org/Commit451/EndlessRecyclerViewOnScrollListener)
 
-This library is derived from (this gist)[https://gist.github.com/ssinss/e06f12ef66c51252563e] but we wanted to provide a way to include the dependency in Gradle.
+This library is derived from [this gist](https://gist.github.com/ssinss/e06f12ef66c51252563e) but we wanted to provide a way to include the dependency in Gradle.
 
 # Gradle Dependency
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:

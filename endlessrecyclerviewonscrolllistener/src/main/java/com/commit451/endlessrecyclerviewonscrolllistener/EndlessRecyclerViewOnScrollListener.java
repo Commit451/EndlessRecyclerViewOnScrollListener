@@ -9,9 +9,9 @@ import android.support.v7.widget.RecyclerView;
  */
 public abstract class EndlessRecyclerViewOnScrollListener extends RecyclerView.OnScrollListener {
 
-    public static final int DEFAULT_VISIBLE_THRESHOLD = 5;
+    private static final int DEFAULT_VISIBLE_THRESHOLD = 5;
 
-    // The total number of items in the dataset after the last load
+    // The total number of items in the data set after the last load
     private int mPreviousTotal = 0;
     // True if we are still waiting for the last set of data to load.
     private boolean mLoading = true;

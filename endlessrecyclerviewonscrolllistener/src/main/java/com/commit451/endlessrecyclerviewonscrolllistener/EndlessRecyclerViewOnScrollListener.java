@@ -42,11 +42,11 @@ public abstract class EndlessRecyclerViewOnScrollListener extends RecyclerView.O
     }
 
     /**
-     * Returns the status of if the scroll listener believes it is loading or not.
-     * @return the loading status
+     * Call reset when the adapter is cleared
      */
-    public boolean getLoading() {
-        return mLoading;
+    public void reset() {
+        mLoading = false;
+        mPreviousTotal = 0;
     }
 
     @Override

@@ -6,22 +6,22 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class GistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CheeseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_FOOTER = 1;
 
     private static final int FOOTER_COUNT = 1;
 
-    private ArrayList<Gist> mGists;
+    private ArrayList<Cheese> mValues;
     private boolean mLoading;
 
-    public GistAdapter() {
-        mGists = new ArrayList<>();
+    public CheeseAdapter() {
+        mValues = new ArrayList<>();
     }
 
-    public void addAll(Collection<Gist> gists) {
-        mGists.addAll(gists);
+    public void addAll(Collection<Cheese> gists) {
+        mValues.addAll(gists);
         notifyDataSetChanged();
     }
 
@@ -31,7 +31,7 @@ public class GistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public void clear() {
-        mGists.clear();
+        mValues.clear();
         notifyDataSetChanged();
     }
 
@@ -39,7 +39,7 @@ public class GistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case TYPE_ITEM:
-                return GistViewHolder.newInstance(parent);
+                return CheeseViewHolder.newInstance(parent);
             case TYPE_FOOTER:
                 return LoadingViewHolder.newInstance(parent);
         }
@@ -48,22 +48,21 @@ public class GistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof GistViewHolder) {
-            ((GistViewHolder) holder).bind(mGists.get(position));
+        if (holder instanceof CheeseViewHolder) {
+            ((CheeseViewHolder) holder).bind(mValues.get(position));
         } else if (holder instanceof LoadingViewHolder) {
             ((LoadingViewHolder) holder).bind(mLoading);
         }
-
     }
 
     @Override
     public int getItemCount() {
-        return mGists.size() + FOOTER_COUNT;
+        return mValues.size() + FOOTER_COUNT;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == mGists.size()) {
+        if (position == mValues.size()) {
             return TYPE_FOOTER;
         }
 
